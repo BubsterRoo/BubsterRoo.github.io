@@ -8,3 +8,5 @@ my own social media and to other websites I participate in.
 
 There will be other updates in the future to add more to it like my projects I have made,
 which will be done after HighSeas for Hackclub, and more that comes to my mind.
+
+This is also compatible for Mobile.
