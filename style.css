@@ -1,0 +1,181 @@
+h1{
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(images/Space-Background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+a{
+    color: #5BAD36;
+}
+
+.container{
+    margin: auto;
+    width: 60%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgba(0, 0, 0, 80%);
+    box-shadow: 0 0 25px;
+    border-radius: 20px;
+}
+
+.container a{
+    text-decoration: none;
+}
+
+.container a:hover{
+    text-decoration: underline;
+    color: #376d1e;
+}
+
+
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro h1{
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #5BAD36;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30;
+}
+
+.links a:hover{
+    color: white;
+}
+
+.links a{
+    margin: 0 10px;
+    font-size: 40px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.picture-mobile{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #5BAD36;
+    border: 0 0 5px #5BAD36;
+    margin-top: 30px;
+}
+
+.picture-desktop{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #5BAD36;
+    border: 0 0 5px #5BAD36;
+    margin-top: 30px;
+}
+
+.divider{
+    width: 80%;
+    height: 0;
+    border-bottom: 2px solid #5BAD36;
+    position: 0 200px;
+    margin: 20px 0;
+}
+
+.body{
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+    font-size: 20px;
+    text-align: justify;
+    font-family: 'Arial';
+}
+
+.tabs{
+    display: flex;
+    justify-content: center;
+    gap: 20px 5px;
+    margin-bottom: 5px;
+}
+
+.tabs a{
+    display: inline-block;
+    width: 75px;
+    padding: 10px 20px;
+    background-color: rgb(20, 20, 20);
+    color: #5BAD36;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cool-link{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.cool-link a{
+    display: inline-block;
+    width: 195px;
+    padding: 10px 20px;
+    background-color: rgb(20, 20, 20);
+    color: #5BAD36;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cool-link a:hover{
+    color:black;
+    background-color: #5BAD36;
+    box-shadow: 0 0 10px #5BAD36;
+}
+
+
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+    color: #5BAD36;
+    margin-bottom: 10px;
+}
+
+
+/*Mobileness*/
+
+@media(max-width: 1100px){
+    .intro{
+        flex-direction: column;
+    }
+
+    .picture-mobile{
+        margin-top: 20px;
+    }
+
+    .picture-desktop{
+        display: none;
+    }
+}
+
+@media(max-width: 620px){
+    .container{
+        width: 80%;
+    }
+}
