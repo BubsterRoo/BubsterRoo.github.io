@@ -178,4 +178,8 @@ footer{
     .container{
         width: 80%;
     }
+
+    h1{
+        font-size: 35px;
+    }
 }
