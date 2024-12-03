@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>Troop 718 - Email</title>
+        <link rel = "icon" href = "merit-badges/images/BSA-Icon.png">
+        <link rel = "stylesheet" href = "styles/style.css">
+    </head>
+
+    <body>
+        <div class = "tabs">
+            <a link href = "index.html">Home</a>
+            <a link href = "meeting.html">Meeting Info</a>
+            <a link href = "pictures.html">Pictures</a>
+            <a link href = "merit-badge.html">Merit Badges</a>
+            <a link href = "rank-advancement.html">Rank Advancement</a>
+            <a link href = "recipes.html">Recipes</a>
+            <a link href = "email.html">Email</a>
+            <a link href = "https://beascout.scouting.org/list/?zip=32259&program%5B%5D=scoutsBSA&unitID=8143">Join Troop 718</a>
+        </div>
+
+        <div class = "container">
+            <div class = "title">
+
+                <img src = "merit-badges/images/BSA-Icon.png" alt="BSA Logo" class = "logo">
+                <h1>Troop 718 - Email</h1>
+                <img src = "merit-badges/images/BSA-Icon.png" alt="BSA Logo" class = "logo">
+
+            </div>
+
+            <hr class = "divider">
+
+            <button onclick = "document.getElementById('id01').style.display = 'block'">Login to a Leadership Position</button>
+            
+            <div id = "id01" class = "modal">
+                <span onclick = "document.getElementById('id01').style.display = 'none'" class = "close" title = "Close Modal">&times;</span>
+
+                <form class = "modal-content animate" action = "/action_page.php">
+                    <div class = "img-container">
+                        <div class = "title">
+                            <img src = "merit-badges/images/BSA-Icon.png" alt = "BSA Logo" class = "logo">
+                            <h1>Login</h1>
+                            <img src = "merit-badges/images/BSA-Icon.png" alt = "BSA Logo" class = "logo">
+                            </div>
+                    </div>
+
+                    <div class = "contain">
+                        <label for = "email"><b>Email</b></label>
+                        <input type = "email" placeholder = "Enter Email" name = "email" required>
+
+                        <label for = "psw"><b>Password</b></label>
+                        <input type = "password" placeholder = "Enter Password" name = "psw" required>
+                        
+                        <div class = "remember">
+                            <label>
+                                <input type = "checkbox" checked = "checked" name = "remember">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div class = "button-row">
+                            <button type = "button" onclick = "document.getElementById('id01').style.display = 'none'" class = "cancelbtn"> Cancel</button>
+                            <button type = "submit">Login</button>
+                        </div>
+                        
+                    </div>
+
+                    <!--
+                    <div class = "contain" style = "background-color: white;">
+                        <span class = "psw">Forget <a href = "#">password?</a></span>
+                    </div>
+                    -->
+
+                    <script>
+                        var modal = document.getElementById('id01');
+
+                        window.onclick = function(event){
+                            if(event.target == modal){
+                                modal.style.display = "none";
+                            }
+                        }
+                    </script>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
