@@ -110,6 +110,16 @@ body{
     padding: 0;
 }
 
+.essentials{
+    text-align: center;
+    font-weight: bold;
+}
+
+.essentials p{
+    margin: 5px 0;
+    padding: 0;
+}
+
 .title{
     font-family: 'Cinzel';
     font-size: 1.5em;
@@ -219,6 +229,7 @@ a:hover{
 .school{
     border: 3px solid #CE1126;
     border-radius: 15px;
+    width: 100%;
 }
 
 .requirement{
@@ -290,6 +301,7 @@ a:hover{
     max-width: 500px;
     border: 3px solid #CE1126;
     border-radius: 15px;
+    margin-left: 25px;
 }
 
 .recipe-name{
@@ -486,4 +498,8 @@ label{
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.mission{
+    font-size: 16px;
 }
