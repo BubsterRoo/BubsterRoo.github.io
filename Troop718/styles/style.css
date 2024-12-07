@@ -38,6 +38,14 @@ body{
     border-right: 3px solid #CE1126;
 }
 
+.rank-mobile{
+    display: none;
+}
+
+.rank-pc{
+    display: block;
+}
+
 .container{
     border-radius: 10px;
     border: 3px solid #CE1126;
@@ -502,4 +510,27 @@ label{
 
 .mission{
     font-size: 16px;
+}
+
+@media(max-width: 768px){
+    .rank-mobile{
+        display: block;
+    }
+    .rank-pc{
+        display: none;
+    }
+    .title{
+        font-size: 1.3em;
+    }
+    .logo{
+        width: 15%;
+    }
+    .scout-values{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .oath{
+        width: 100%;
+    }
 }
