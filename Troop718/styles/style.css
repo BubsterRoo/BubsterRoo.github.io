@@ -63,6 +63,24 @@ body{
     width: 80%;
 }
 
+.calendar-wrapper{
+    border: 3px solid #CE1126;
+    border-radius: 15px;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.calendar{
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    align-self: center;
+}
+
 .scout-values{
     display: flex;
     gap: 5px;
@@ -103,6 +121,7 @@ body{
 .outdoor-code{
     text-align: center;
     font-weight: bold;
+    margin-bottom: 30px;
 }
 
 .outdoor-code p{
@@ -230,6 +249,10 @@ a:hover{
     border: 3px solid #CE1126;
     border-radius: 15px;
     width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .requirement{
@@ -502,4 +525,54 @@ label{
 
 .mission{
     font-size: 16px;
+}
+
+@media(max-width: 768px){
+    .recipe-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ingredients{
+        text-align: center;
+    }
+    .ingredients ul{
+        padding: 0;
+    }
+    .ingredients li{
+        text-align: center;
+    }
+    .recipe{
+        margin-bottom: 50px;
+    }
+    .recipe img{
+        width: 80%;
+        max-width: 400px;
+        margin: 0 auto 20px;
+    }
+    .recipe-name{
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .badge img{
+        width: 25%;
+    }
+    .badge {
+        display: none;
+    }
+    .title{
+        font-size: 1.2em;
+    }
+    .logo{
+        width: 20%;
+    }
+    .scout-values{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .oath{
+        width: 100%;
+    }
 }
