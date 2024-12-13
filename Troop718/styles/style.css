@@ -70,6 +70,7 @@ body{
     height: 600px;
     overflow: hidden;
     margin: 0 auto;
+    margin-bottom: 50px;
     box-sizing: border-box;
 }
 
@@ -511,6 +512,9 @@ label{
 }
 
 @media(max-width: 768px){
+    .meeting{
+        width: 90%;
+    }
     .recipe-content{
         display: flex;
         flex-direction: column;
@@ -537,12 +541,6 @@ label{
         font-size: 1.5em;
         font-weight: bold;
         margin-bottom: 20px;
-    }
-    .badge img{
-        width: 25%;
-    }
-    .badge {
-        display: none;
     }
     .title{
         font-size: 1.2em;
