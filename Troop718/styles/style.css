@@ -507,7 +507,7 @@ label{
 
 @media(max-width: 768px){
     .meeting{
-        width: 90%;
+        width: 95%;
     }
     .recipe-content{
         display: flex;
