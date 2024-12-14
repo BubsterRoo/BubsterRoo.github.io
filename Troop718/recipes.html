@@ -37,7 +37,7 @@
                     <a link href = "https://www.allrecipes.com/recipe/216742/dutch-oven-mountain-man-breakfast/" target = "_blank">Mountain Man Omelette</a>
                 </div>
                 <div class = "recipe-content">
-                    <img id="exampleImage" src = "merit-badges/images/Mountain-man.png" alt = "Mountain Man">
+                    <img src = "merit-badges/images/Mountain-man.png" alt = "Mountain Man">
                     <div class = "ingredients">
                         <p>Ingredients:</p>
                         <ul>
@@ -159,31 +159,5 @@
                 </div>
             </div>
         </div>
-
-
-        <p id="dimensions"></p>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const img = document.getElementById("exampleImage");
-
-            img.onload = function() {
-                // Get the displayed dimensions of the image
-                const displayedWidth = img.offsetWidth;
-                const displayedHeight = img.offsetHeight;
-
-                // Print the dimensions in a paragraph
-                const dimensionsParagraph = document.getElementById("dimensions");
-                dimensionsParagraph.textContent = `Displayed image size: ${displayedWidth}px x ${displayedHeight}px`;
-            };
-
-            // If the image is already cached and loaded, trigger onload manually
-            if (img.complete) {
-                img.onload();
-            }
-        });
-    </script>
-
-
     </body>
 </html>
