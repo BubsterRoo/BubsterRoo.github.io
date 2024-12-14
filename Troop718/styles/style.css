@@ -162,7 +162,7 @@ h1{
 
 .divider{
     margin: 20px auto;
-    width: 80%;
+    width: 90%;
     height: 0;
     border-bottom: 2px solid #CE1126;
     position: 0 200px;
@@ -177,7 +177,6 @@ a:hover{
     color: #CE1126;
     text-decoration: underline;
 }
-
 
 .section{
     font-size: 2rem;
@@ -380,7 +379,7 @@ a:hover{
 }
 
 .header-image{
-    width: 90%;
+    width: 100%;
     border: 3px solid #CE1126;
     border-radius: 10px;
 }
