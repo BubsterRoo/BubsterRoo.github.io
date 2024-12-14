@@ -514,14 +514,12 @@ label{
         flex-direction: column;
         align-items: center;
     }
-    .ingredients{
+    .ingredients p{
         text-align: center;
     }
     .ingredients ul{
+        width: 75%;
         padding: 0;
-    }
-    .ingredients li{
-        text-align: center;
     }
     .recipe{
         margin-bottom: 50px;
