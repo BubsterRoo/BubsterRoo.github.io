@@ -372,7 +372,7 @@ a:hover{
     text-align: justify;
     margin: auto;
     margin-top: 20px;
-    width: 70%;
+    width: 80%;
 }
 
 .directions span.step{
@@ -518,8 +518,11 @@ label{
         text-align: center;
     }
     .ingredients ul{
-        width: 75%;
-        padding: 0;
+        list-style-position: inside;
+    }
+    .ingredients li{
+        text-align: left;
+        width: 100%;
     }
     .recipe{
         margin-bottom: 50px;
@@ -533,6 +536,9 @@ label{
         font-size: 1.5em;
         font-weight: bold;
         margin-bottom: 20px;
+    }
+    .directions{
+        max-width: 400px;
     }
     .title{
         font-size: 1.2em;
