@@ -1,7 +1,6 @@
 html{
     font-family: 'Ubuntu', sans-serif;
 }
-
 body{
     background-color: #b39475;
     margin: 0;
@@ -9,7 +8,6 @@ body{
     padding-top: 60px;
 
 }
-
 .tabs{
     display: flex;
     justify-content: space-evenly;
@@ -23,7 +21,6 @@ body{
     width: 100%;
     z-index: 1000;
 }
-
 .tabs a{
     flex-grow: 1;
     display: inline-block;
@@ -33,11 +30,9 @@ body{
     text-align: center;
     
 }
-
 .tabs a:last-child{
     border-right: 3px solid #CE1126;
 }
-
 .container{
     border-radius: 10px;
     border: 3px solid #CE1126;
@@ -47,7 +42,6 @@ body{
     width: 80%;
     text-align: center;
 }
-
 .about{
     margin: 0 5%;
     font-size: large;
@@ -56,13 +50,11 @@ body{
     flex-direction: column;
     align-items: center;
 }
-
 .meeting{
     margin: auto;
     text-align: center;
     width: 80%;
 }
-
 .calendar-wrapper{
     border: 3px solid #CE1126;
     border-radius: 15px;
@@ -73,7 +65,6 @@ body{
     margin-bottom: 50px;
     box-sizing: border-box;
 }
-
 .calendar{
     width: 100%;
     height: 100%;
@@ -81,7 +72,6 @@ body{
     display: block;
     align-self: center;
 }
-
 .scout-values{
     display: flex;
     gap: 5px;
@@ -89,11 +79,9 @@ body{
     align-items: flex-start;
     margin-top: 20px;
 }
-
 .scout-values > div{
     flex: 1;
 }
-
 .oath{
     font-weight: bold;
     width: 50%;
@@ -103,43 +91,35 @@ body{
     flex-direction: column;
     align-items: center;
 }
-
 .oath p{
     margin: 5px 0;
     padding: 0;
 } 
-
 .law{
     text-align: center;
     font-weight: bold;
 }
-
 .law p{
     margin: 5px 0;
     padding: 0;
 }
-
 .outdoor-code{
     text-align: center;
     font-weight: bold;
     margin-bottom: 30px;
 }
-
 .outdoor-code p{
     margin: 5px 0;
     padding: 0;
 }
-
 .essentials{
     text-align: center;
     font-weight: bold;
 }
-
 .essentials p{
     margin: 5px 0;
     padding: 0;
 }
-
 .title{
     font-family: 'Cinzel';
     font-size: 1.5em;
@@ -149,17 +129,14 @@ body{
     gap: 20px;
     color: #CE1126;
 }
-
 h1{
     text-align: center;
     margin: 0;
 }
-
 .logo{
     width: 10%;
     height: auto;
 }
-
 .divider{
     margin: 20px auto;
     width: 90%;
@@ -167,36 +144,30 @@ h1{
     border-bottom: 2px solid #CE1126;
     position: 0 200px;
 }
-
 a{
     color: #003f87;
     text-decoration: none;
 }
-
 a:hover{
     color: #CE1126;
     text-decoration: underline;
 }
-
 .section{
     font-size: 2rem;
     font-weight: bold;
     color: #003f87;
 }
-
 .badge{
     margin: 10px;
     width: calc(20% - 20px);
     gap: 20px;
 }
-
 .badge img{
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 10px;
 }
-
 .badge a{
     display: block;
     font-size: 1rem;
@@ -206,26 +177,22 @@ a:hover{
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .normal-badges{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .patch{
     flex: 0 1 calc(150px);
     margin: 10px;
     text-align: center;
 }
-
 .patch img{
     width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 10px;
 }
-
 .patch a{
     display: block;
     font-size: 1rem;
@@ -238,7 +205,6 @@ a:hover{
     margin-top: 20px;
     text-align: center;
 }
-
 .school{
     border: 3px solid #CE1126;
     border-radius: 15px;
@@ -248,7 +214,6 @@ a:hover{
     margin: 0 auto;
     margin-bottom: 20px;
 }
-
 .requirement{
     width: 90%;
     margin: 20px auto;
@@ -256,37 +221,31 @@ a:hover{
     display: flex;
     align-items: flex-start;
 }
-
 .indent{
     flex: 0 0 auto;
     text-align: left;
     margin-right: 25px;
     margin-left: 50px;
 }
-
 .requirement-num{
     flex: 0 0 auto;
     text-align: left;
     font-weight: bold;
     margin-right: 25px;
 }
-
 .requirement-text{
     flex-grow: 1;
     max-width: 90%;
     margin-bottom: 10px;
 }
-
 .requirement-text ul{
     margin: 0;
     margin-top: 10px;
     padding-left: 50px;
 }
-
 .requirement-bold{
     font-weight: bold;
 }
-
 .requirement p{
     margin: 0;
 }
@@ -294,25 +253,21 @@ a:hover{
     font-weight: bold;
     color: #CE1126;
 }
-
 .requirement-text a:hover{
     color: #003f87;
 }
-
 .statement{
     font-weight: bold;
     text-align: center;
     width: 80%;
     margin: auto;
 }
-
 .recipe{
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
     text-align: center;
 }
-
 .recipe img{
     width: 50%;
     max-width: 500px;
@@ -320,13 +275,11 @@ a:hover{
     border-radius: 15px;
     margin-left: 25px;
 }
-
 .recipe-name{
     font-size: xx-large;
     font-weight: bold;
     margin-bottom: 20px;
 }
-
 .recipe-content{
     display: flex;
     align-items: flex-start;
@@ -334,23 +287,19 @@ a:hover{
     gap: 20px;
     text-align: left;
 }
-
 .ingredients{
     flex: 1;
     font-weight: bold;
 }
-
 .ingredients ul{
     width: 90%;
     margin: auto;
     padding-left: 20px;
     list-style-type: disc;
 }
-
 .ingredients li{
     margin-top: 10px;
 }
-
 .ingredients p{
     margin-top: 0;
     margin-bottom: 10px;
@@ -358,7 +307,6 @@ a:hover{
     font-size: larger;
     text-decoration: underline;
 }
-
 .directions p{
     text-align: center;
     margin-bottom: 10px;
@@ -366,30 +314,25 @@ a:hover{
     text-decoration: underline;
     font-weight: bold;
 }
-
 .directions{
     text-align: justify;
     margin: auto;
     margin-top: 20px;
     width: 80%;
 }
-
 .directions span.step{
     font-weight: bold;
 }
-
 .header-image{
     width: 100%;
     border: 3px solid #CE1126;
     border-radius: 10px;
 }
-
 .cancelbtn{
     text-align: center;
     margin: auto;
     position: relative;
 }
-
 .modal{
     display: none;
     position: fixed;
@@ -403,7 +346,6 @@ a:hover{
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
 }
-
 .modal-content{
     background-color: white;
     margin: auto;
@@ -415,43 +357,35 @@ a:hover{
     align-items: center;
     padding: 20px;
 }
-
 .close:hover,
 .close:focus{
     color: #CE1126;
     cursor: pointer;
 }
-
 .animate{
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s;
 }
-
 .animate-out{
     -webkit-animation: animatezoomout 0.6s;
     animation: animatezoomout 0.6s;
 }
-
 @-webkit-keyframes animatezoom{
     from{-webkit-transform: scale(0)}
     to{-webkit-transform: scale(1);}
 }
-
 @keyframes animatezoom{
     from{transform: scale(0);}
     to{transform: scale(1);}
 }
-
 @-webkit-keyframes animatezoomout{
     from{-webkit-transform: scale(1)}
     to{-webkit-transform: scale(0);}
 }
-
 @keyframes animatezoomout{
     from{transform: scale(1);}
     to{transform: scale(0);}
 }
-
 button{
     background-color: #003f87;
     color: white;
@@ -462,11 +396,9 @@ button{
     cursor: pointer;
     width: 230px;
 }
-  
 button:hover{
     background-color: #CE1126;
 }
-
 .contain{
     margin-top: 10px;
     display: flex;
@@ -476,7 +408,6 @@ button:hover{
     gap: 15px;
     width: 100%;
 }
-
 input[type="email"],
 input[type="password"]{
     width: 80%;
@@ -486,24 +417,20 @@ input[type="password"]{
     border-radius: 5px;
     font-size: 1rem;
 }
-
 label{
     font-size: 1rem;
     color: #003f87;
     text-align: center;
 }
-
 .remember{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-
 .mission{
     font-size: 16px;
 }
-
 @media(max-width: 768px){
     .meeting{
         width: 95%;
@@ -522,6 +449,9 @@ label{
     .ingredients li{
         text-align: left;
         width: 100%;
+        padding-left: 23px;
+        text-indent: -23px;
+        max-width: 300px;
     }
     .recipe{
         margin-bottom: 50px;
@@ -541,9 +471,12 @@ label{
     }
     .title{
         font-size: 1.2em;
+        gap: 10px;
     }
     .logo{
         width: 20%;
+        margin: 0;
+        padding: 0;
     }
     .scout-values{
         flex-direction: column;
@@ -554,7 +487,19 @@ label{
         width: 100%;
     }
 }
-
+@media(min-width: 666px){
+    .title div{
+        display: inline;
+    }
+}
+@media(max-width: 666px){
+    .dash-title{
+        display: none;
+    }
+    .troop-title{
+        display: none;
+    }
+}
 @media(min-width: 1192px){
     .patches{
         display: flex;
@@ -574,7 +519,6 @@ label{
         width: calc(100% * 0.7168);
     }
 }
-
 @media(min-width: 1180px){
     .badge{
         width: calc(20% - 20px);
