@@ -159,10 +159,13 @@ a:hover{
 }
 .badge{
     margin: 10px;
-    width: calc(20% - 20px);
+    width: calc(20% - 60px);
     gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .badge img{
+    width: 80%;
     max-width: 100%;
     height: auto;
     display: block;
@@ -486,6 +489,12 @@ label{
     .oath{
         width: 100%;
     }
+    
+}
+@media(max-width: 767px){
+    .badge img{
+        width: 100%;
+    }
 }
 @media(min-width: 666px){
     .title div{
@@ -525,8 +534,8 @@ label{
         width: calc(100% * 0.7168);
     }
 }
-@media(min-width: 1180px){
-    .badge{
-        width: calc(20% - 20px);
+@media(max-width: 1191px){
+    .patch img{
+        width: 50%;
     }
 }
