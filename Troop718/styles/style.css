@@ -491,12 +491,18 @@ label{
     .title div{
         display: inline;
     }
+    .mobile-title{
+        display: none;
+    }
 }
 @media(max-width: 666px){
     .dash-title{
         display: none;
     }
     .troop-title{
+        display: none;
+    }
+    .desktop-title{
         display: none;
     }
 }
