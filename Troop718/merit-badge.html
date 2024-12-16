@@ -738,5 +738,24 @@
                 </div>
             </div>
         </div>
+
+        <p id="screenSizeOutput">Screen size will be displayed here.</p>
+
+        <script>
+            // Function to measure and display the screen size
+            function displayScreenSize() {
+                const width = window.innerWidth;  // Viewport width
+                const height = window.innerHeight; // Viewport height
+                document.getElementById("screenSizeOutput").textContent = `Screen size: ${width}px by ${height}px`;
+            }
+
+            // Measure screen size on page load
+            window.addEventListener("load", displayScreenSize);
+
+            // Update screen size dynamically on resize
+            window.addEventListener("resize", displayScreenSize);
+        </script>
+
+
     </body>
 </html>
