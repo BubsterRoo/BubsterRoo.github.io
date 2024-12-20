@@ -274,7 +274,7 @@ a:hover{
     text-align: center;
 }
 .recipe img{
-    width: 50%;
+    width: 100%;
     max-width: 500px;
     border: 3px solid #CE1126;
     border-radius: 15px;
@@ -284,17 +284,16 @@ a:hover{
     font-weight: bold;
     margin-bottom: 20px;
 }
-.recipe-content{
+.recipe-content-inner{
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     text-align: left;
-    margin-left: 1%;
 }
 .ingredients{
-    flex: 1;
     font-weight: bold;
+    width: 300px;
 }
 .ingredients ul{
     width: 90%;
@@ -308,12 +307,10 @@ a:hover{
 .ingredients p{
     margin-top: 0;
     margin-bottom: 10px;
-    margin-left: 20px;
     font-size: larger;
     text-decoration: underline;
 }
 .directions p{
-    text-align: center;
     margin-bottom: 10px;
     font-size: larger;
     text-decoration: underline;
@@ -436,20 +433,25 @@ label{
 .mission{
     font-size: 16px;
 }
+@media(min-width: 769px){
+    .recipe-content-inner{
+        margin-left: -150px;
+    }
+}
 @media(max-width: 768px){
     .meeting{
         width: 95%;
     }
-    .recipe-content{
-        display: flex;
+    .recipe-content-inner{
         flex-direction: column;
         align-items: center;
     }
-    .ingredients p{
+    .ingredients{
         text-align: center;
     }
     .ingredients ul{
         list-style-position: inside;
+        padding: 0;
     }
     .ingredients li{
         text-align: left;
@@ -462,9 +464,8 @@ label{
         margin-bottom: 50px;
     }
     .recipe img{
-        width: 80%;
-        max-width: 400px;
-        margin: 0 auto 20px;
+        max-width: 350px;
+        margin-bottom: 20px;
     }
     .recipe-name{
         font-size: 1.5em;
@@ -491,7 +492,6 @@ label{
     .oath{
         width: 100%;
     }
-    
 }
 @media(max-width: 910px){
     .badge{
@@ -523,11 +523,6 @@ label{
     }
 }
 @media(min-width: 1192px){
-    .patches{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .top-patches{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
