@@ -1,0 +1,56 @@
+body{
+    background-color: #69D13C;
+}
+.title{
+    font-family: 'Cinzel';
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tabs{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.tabs a{
+    display: inline-block;
+    width: 175px;
+    height: 225px;
+    padding: 10px 20px;
+    background-color: #5BAD36;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.tabs img{
+    width: 175px;
+    height: 175px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.tabs a:hover img{
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 15px white;
+}
+.tabs a:hover{
+    width: 200px;
+    height: 250px;
+    color: #5BAD36;
+    background-color: black;
+    box-shadow: 0 0 10px black;
+}
+.tabs a span{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
