@@ -1,0 +1,34 @@
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+const floorImage = new Image();
+floorImage.src = 'images/I-piece.png';
+const floorImage = new Image();
+floorImage.src = 'images/L-piece.png';
+const floorImage = new Image();
+floorImage.src = 'images/J-piece.png';
+const floorImage = new Image();
+floorImage.src = 'images/Z-piece.png';
+const floorImage = new Image();
+floorImage.src = 'images/S-piece.png';
+const floorImage = new Image();
+floorImage.src = 'images/O-piece.png';
+const floorImage = new Image();
+floorImage.src = 'images/T-piece.png';
+const floorImage = new Image();
+floorImage.src = 'images/I-piece-outline.png';
+const floorImage = new Image();
+floorImage.src = 'images/L-piece-outline.png';
+const floorImage = new Image();
+floorImage.src = 'images/J-piece-outline.png';
+const floorImage = new Image();
+floorImage.src = 'images/Z-piece-outline.png';
+const floorImage = new Image();
+floorImage.src = 'images/S-piece-outline.png';
+const floorImage = new Image();
+floorImage.src = 'images/O-piece-outline.png';
+const floorImage = new Image();
+floorImage.src = 'images/T-piece-outline.png';

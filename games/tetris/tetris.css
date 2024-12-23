@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#canvas{
+    border: 5px solid black;
+    height: calc(100% - 10px);
+    aspect-ratio: 53/105;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #242323;
+    background-size: auto calc(100% - 74px);
+    background-position-y: top;
+}
