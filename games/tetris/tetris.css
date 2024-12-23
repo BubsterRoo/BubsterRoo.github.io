@@ -2,14 +2,41 @@
     margin: 0;
     padding: 0;
 }
-#canvas{
-    border: 5px solid black;
-    height: calc(100% - 10px);
-    aspect-ratio: 53/105;
+#board{
+    border: 3px solid #242323;
+    background-color: #242323;
+    aspect-ratio: 1/2;
+    height: calc(100% - 6px);
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    background-color: #242323;
-    background-size: auto calc(100% - 74px);
-    background-position-y: top;
+}
+#nextPiece{
+    border: 3px solid #242323;
+    background-color: black;
+    height: 345px;
+    width: 200px;
+    top: 10%;
+    left: 79%;
+    transform: translate(-100%, 0);
+    position: absolute;
+}
+#hold{
+    border: 3px solid #242323;
+    background-color: black;
+    height: 125px;
+    width: 200px;
+    left: 21%;
+    top: 10%;
+    position: absolute;
+}
+#score{
+    border: 3px solid #242323;
+    background-color: black;
+    height: 290px;
+    width: 200px;
+    left: 21%;
+    top: 90%;
+    transform: translate(0, -100%);
+    position: absolute;
 }
