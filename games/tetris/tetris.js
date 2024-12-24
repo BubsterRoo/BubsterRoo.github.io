@@ -62,10 +62,47 @@ scorectx.fillText(scoreText, (score.width - scoreTextWidth) / 2, 35);
 
 let xPos = 0;
 let yPos = 0;
+let currentYPos = 0;
+let currentXPos = 3;
 const backgroundSize = (board.width - 9) / 10;
 background.onload = function(){
     drawBackground();
+    drawIPiece(currentXPos, currentYPos);
+    intervalid = setInterval(moveIPieceDown, 1000);
 }
+document.addEventListener('keydown', (e) => {
+    /*
+    if(e.key === 'ArrowDown'){
+        currentYPos++;
+        drawBackground();
+        drawIPiece(currentXPos, currentYPos);
+    }
+    */
+    if(e.key ==='ArrowLeft'){
+        
+    }
+    else if(e.key ==='ArrowRight'){
+        currentXPos++;
+        drawBackground();
+        drawIPiece(currentXPos, currentYPos);
+    }
+    /*
+    else if(e.key ==='ArrowUp'){
+        currentYPos--;
+        drawBackground();
+        drawIPiece(currentXPos, currentYPos);
+    }
+    */
+})
+function moveIPieceDown(){
+    currentYPos++;
+    drawBackground();
+    drawIPiece(currentXPos, currentYPos);
+    if(currentYPos > 20){
+        clearInterval(intervalid);
+    }
+}
+
 function drawBackground(){
     for(let i = 0; i < 10; i++){
         for(let j = 0; j < 20; j++){
