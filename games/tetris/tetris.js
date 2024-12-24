@@ -91,7 +91,7 @@ background.onload = function(){
     drawBackground();
     currentpiece.draw(currentXPos, currentYPos, rotation);
     currentpiece.drawOutline(currentXPos, currentYOutlinePos, rotation);
-    //intervalid = setInterval(movePieceDown, 1000);
+    intervalid = setInterval(movePieceDown, 1000);
 }
 document.addEventListener('keydown', (e) => {
     /*
