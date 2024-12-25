@@ -42,6 +42,7 @@ const oPieceOutline = new Image();
 oPieceOutline.src = 'images/O-piece-outline.png';
 const tPieceOutline = new Image();
 tPieceOutline.src = 'images/T-piece-outline.png';
+
 const background = new Image();
 background.src = 'images/Background.png';
 const nextText = "NEXT";
@@ -80,16 +81,48 @@ let currentXPos = 3;
 let currentYOutlinePos = 19;
 let rotation = 0;
 let currentpiece;
+let nextPieceOne;
+let nextPieceTwo;
+let nextPieceThree;
 const backgroundSize = (board.width - 9) / 10;
+let gapOne = 1.5;
+let gapTwo = 1.5;
+let gapThree = 1.5;
 
 function getRandomPiece(){
-    const randomIndex = Math.floor(Math.random() * pieces.length);
-    currentpiece = pieces[randomIndex];
+    const randomIndex = Math.floor(Math.random() * 7);
+    return pieces[randomIndex];
 }
 background.onload = function(){
-    getRandomPiece();
     drawBackground();
-    currentpiece.draw(currentXPos, currentYPos, rotation);
+    nextPieceOne = getRandomPiece();
+    nextPieceTwo = getRandomPiece();
+    nextPieceThree = getRandomPiece();
+
+    if(nextPieceOne == pieces[6]){
+        gapOne = 2;
+    }
+    else if(nextPieceOne == pieces[0]){
+        gapOne = 1;
+    }
+    if(nextPieceTwo == pieces[6]){
+        gapTwo = 2;
+    }
+    else if(nextPieceTwo == pieces[0]){
+        gapTwo = 1;
+    }
+    if(nextPieceThree == pieces[6]){
+        gapThree = 2;
+    }
+    else if(nextPieceThree == pieces[0]){
+        gapThree = 1;
+    }
+    nextPieceOne.draw(gapOne, 3, 0, nextPiecectx);
+    nextPieceTwo.draw(gapTwo, 6.5, 0, nextPiecectx);
+    nextPieceThree.draw(gapThree, 10, 0, nextPiecectx);
+
+    currentpiece = nextPieceOne;
+    currentpiece.draw(currentXPos, currentYPos, rotation, boardctx);
     currentpiece.drawOutline(currentXPos, currentYOutlinePos, rotation);
     intervalid = setInterval(movePieceDown, 1000);
 }
@@ -107,7 +140,7 @@ document.addEventListener('keydown', (e) => {
                 currentXPos--;
                 drawBackground();
                 currentpiece.drawOutline(currentXPos, currentYOutlinePos, rotation);
-                currentpiece.draw(currentXPos, currentYPos, rotation);
+                currentpiece.draw(currentXPos, currentYPos, rotation, boardctx);
             }
         }
     }
@@ -117,7 +150,7 @@ document.addEventListener('keydown', (e) => {
                 currentXPos++;
                 drawBackground();
                 currentpiece.drawOutline(currentXPos, currentYOutlinePos, rotation);
-                currentpiece.draw(currentXPos, currentYPos, rotation);
+                currentpiece.draw(currentXPos, currentYPos, rotation, boardctx);
             }
         }
     }
@@ -126,78 +159,88 @@ document.addEventListener('keydown', (e) => {
             rotation = (rotation + 1) % 4;
             drawBackground();
             currentpiece.drawOutline(currentXPos, currentYOutlinePos, rotation);
-            currentpiece.draw(currentXPos, currentYPos, rotation);
+            currentpiece.draw(currentXPos, currentYPos, rotation, boardctx);
         }
     }
-    else if(e.key === ' '){
-        let newYPos = currentYOutlinePos;
+    else if(e.key ===' '){
+        currentYPos = currentYOutlinePos;
+        room = pushUp();
         drawBackground();
-        currentpiece.drawOutline(currentXPos, newYPos, rotation);
-        currentpiece.draw(currentXPos, newYPos, rotation);
+        currentpiece.draw(currentXPos, currentYPos - room, rotation, boardctx);
+        clearInterval(intervalid);
+    }
+    else if(e.key ==='c'){
+        currentpiece.draw(1.5, 3, 0, holdctx)
+        drawBackground();
         clearInterval(intervalid);
     }
 })
 function movePieceDown(){
-    currentYPos++;
-    drawBackground();
-    currentpiece.drawOutline(currentXPos, currentYOutlinePos, rotation);
-    currentpiece.draw(currentXPos, currentYPos, rotation);
-    if(currentYPos == currentYOutlinePos){
+    room = pushUp();
+    if(currentYPos != (currentYOutlinePos - room)){
+        currentYPos++;
+        drawBackground();
+        currentpiece.drawOutline(currentXPos, currentYOutlinePos, rotation);
+        currentpiece.draw(currentXPos, currentYPos, rotation, boardctx);
+    }
+    else{
         clearInterval(intervalid);
     }
 }
 function drawBackground(){
+    boardctx.clearRect(0, 0, board.width, board.height);
     for(let i = 0; i < 10; i++){
         for(let j = 0; j < 20; j++){
             boardctx.drawImage(background, xPos + (i * (backgroundSize + 1)), yPos + (j * (backgroundSize + 1)), backgroundSize, backgroundSize);
         }
     }
 }
-function drawIPiece(xPosPiece, yPosPiece, rotation){
+function drawIPiece(xPosPiece, yPosPiece, rotation, board){
     if(rotation == 0){
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 
     else if(rotation == 1){
         xPosPiece++;
         xPosPiece++;
+        yPosPiece++;
+        yPosPiece++;
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece--;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
-        yPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
-        yPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
-        yPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        yPosPiece--;
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        yPosPiece--;
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 
     else if(rotation == 2){
         yPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 
     else if(rotation == 3){
         xPosPiece++;
         yPosPiece--;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece++;
-        boardctx.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(iPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 }
 function drawIPieceOutline(xPosPiece, yPosPiece, rotation){
@@ -239,18 +282,24 @@ function drawIPieceOutline(xPosPiece, yPosPiece, rotation){
         boardctx.drawImage(iPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 }
-function drawOPiece(xPosPiece, yPosPiece){
-    yPosPiece--;
-    boardctx.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
-    xPosPiece++;
-    boardctx.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
-    xPosPiece--;
-    yPosPiece++;
-    boardctx.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
-    xPosPiece++;
-    boardctx.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+function drawOPiece(xPosPiece, yPosPiece, rotation, board){
+    if(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3){
+        if(board == boardctx){
+            xPosPiece++;
+        }
+        yPosPiece--;
+        board.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        xPosPiece++;
+        board.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        xPosPiece--;
+        yPosPiece++;
+        board.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        xPosPiece++;
+        board.drawImage(oPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+    }
 }
 function drawOPieceOutline(xPosPiece, yPosPiece){
+    xPosPiece++;
     boardctx.drawImage(oPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     xPosPiece++;
     boardctx.drawImage(oPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
@@ -260,15 +309,15 @@ function drawOPieceOutline(xPosPiece, yPosPiece){
     xPosPiece++;
     boardctx.drawImage(oPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
 }
-function drawLPiece(xPosPiece, yPosPiece, rotation){
+function drawLPiece(xPosPiece, yPosPiece, rotation, board){
     if(rotation == 0){
-        boardctx.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece--;
-        boardctx.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(lPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
     else if(rotation == 1){
         xPosPiece++;
@@ -345,16 +394,16 @@ function drawLPieceOutline(xPosPiece, yPosPiece, rotation){
         boardctx.drawImage(lPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 }
-function drawJPiece(xPosPiece, yPosPiece, rotation){
+function drawJPiece(xPosPiece, yPosPiece, rotation, board){
     if(rotation == 0){
         yPosPiece--;
-        boardctx.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece++;
-        boardctx.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(jPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece--;
         xPosPiece--;
         yPosPiece++;
@@ -442,16 +491,16 @@ function drawJPieceOutline(xPosPiece, yPosPiece, rotation){
         boardctx.drawImage(jPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 }
-function drawZPiece(xPosPiece, yPosPiece, rotation){
+function drawZPiece(xPosPiece, yPosPiece, rotation, board){
     if(rotation == 0){
         yPosPiece--;
-        boardctx.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece++;
-        boardctx.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(zPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece--;
         xPosPiece--;
         yPosPiece++;
@@ -524,15 +573,15 @@ function drawZPieceOutline(xPosPiece, yPosPiece, rotation){
         boardctx.drawImage(zPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 }
-function drawSPiece(xPosPiece, yPosPiece, rotation){
+function drawSPiece(xPosPiece, yPosPiece, rotation, board){
     if(rotation == 0){
-        boardctx.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece--;
-        boardctx.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(sPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece--;
         xPosPiece--;
     }
@@ -606,18 +655,18 @@ function drawSPieceOutline(xPosPiece, yPosPiece, rotation){
         boardctx.drawImage(sPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
 }
-function drawTPiece(xPosPiece, yPosPiece, rotation){
+function drawTPiece(xPosPiece, yPosPiece, rotation, board){
     if(rotation == 0){
         xPosPiece++;
         yPosPiece--;
-        boardctx.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         yPosPiece++;
         xPosPiece--;
-        boardctx.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece++;
-        boardctx.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
+        board.drawImage(tPiece, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
         xPosPiece--;
         xPosPiece--;
     }
@@ -708,4 +757,64 @@ function drawTPieceOutline(xPosPiece, yPosPiece, rotation){
         xPosPiece--;
         boardctx.drawImage(tPieceOutline, (xPosPiece * backgroundSize) + xPosPiece, (yPosPiece * backgroundSize) + yPosPiece, backgroundSize, backgroundSize)
     }
+}
+function pushUp(){
+    let room;
+    if(currentpiece == pieces[0]){
+        if(rotation == 0 || rotation == 2){
+            room = 0;
+        }
+        else if(rotation == 1 || rotation == 3){
+            room = 2;
+        }
+    }
+
+    if(currentpiece == pieces[1]){
+        if(rotation == 0){
+            room = 0;
+        }
+        else if(rotation == 1 || rotation == 2 || rotation == 3){
+            room = 1;
+        }
+    }
+
+    if(currentpiece == pieces[2]){
+        if(rotation == 0){
+            room = 0;
+        }
+        else if(rotation == 1 || rotation == 2 || rotation == 3){
+            room = 1;
+        }
+    }
+
+    if(currentpiece == pieces[3]){
+        if(rotation == 0){
+            room = 0;
+        }
+        else if(rotation == 1 || rotation == 2 || rotation == 3){
+            room = 1;
+        }
+    }
+
+    if(currentpiece == pieces[4]){
+        if(rotation == 0){
+            room = 0;
+        }
+        else if(rotation == 1 || rotation == 2 || rotation == 3){
+            room = 1;
+        }
+    }
+
+    if(currentpiece == pieces[5]){
+        if(rotation == 0){
+            room = 0;
+        }
+        else if(rotation == 1 || rotation == 2 || rotation == 3){
+            room = 1;
+        }
+    }
+    if(currentpiece == pieces[6]){
+        room = 0;
+    }
+    return room;
 }

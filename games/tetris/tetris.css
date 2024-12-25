@@ -20,8 +20,8 @@ body{
 #nextPiece{
     border: 3px solid #242323;
     background-color: black;
-    height: 370px;
-    width: 200px;
+    height: 385px;
+    width: 182px;
     top: 5%;
     left: 79%;
     transform: translate(-100%, 0);
@@ -31,7 +31,7 @@ body{
     border: 3px solid #242323;
     background-color: black;
     height: 150px;
-    width: 200px;
+    width: 182px;
     left: 21%;
     top: 5%;
     position: absolute;
@@ -40,7 +40,7 @@ body{
     border: 3px solid #242323;
     background-color: black;
     height: 315px;
-    width: 200px;
+    width: 182px;
     left: 21%;
     top: 85%;
     transform: translate(0, -100%);
