@@ -20,18 +20,17 @@ body{
 #nextPiece{
     border: 3px solid #242323;
     background-color: black;
-    height: 385px;
-    width: 182px;
+    height: calc(100% / 1.65);
+    aspect-ratio: 182/385;
     top: 5%;
-    left: 79%;
-    transform: translate(-100%, 0);
+    right: 21%;
     position: absolute;
 }
 #hold{
     border: 3px solid #242323;
     background-color: black;
-    height: 150px;
-    width: 182px;
+    height: calc(100% / 4.24);
+    aspect-ratio: 182/150;
     left: 21%;
     top: 5%;
     position: absolute;
@@ -39,10 +38,9 @@ body{
 #score{
     border: 3px solid #242323;
     background-color: black;
-    height: 315px;
-    width: 182px;
+    height: calc(100% / 2);
+    aspect-ratio: 182/315;
     left: 21%;
-    top: 85%;
-    transform: translate(0, -100%);
+    bottom: 15%;
     position: absolute;
 }
