@@ -1,5 +1,10 @@
 body{
-    background-color: #69D13C;
+    background-image: url(Background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1{
+    color: #5BAD36;
 }
 .title{
     font-family: 'Cinzel';

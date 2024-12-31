@@ -1,8 +1,7 @@
 a{
     margin: 20px;
     display: inline-block;
-    width: 50px;
-    height: 25px;
+    width: 5%;
     padding: 10px 20px;
     background-color: #5BAD36;
     color: black;
@@ -12,8 +11,7 @@ a{
     position: relative;
 }
 a:hover{
-    width: 60px;
-    height: 35px;
+    width: calc(5% + 10px);
     color: #5BAD36;
     background-color: black;
     box-shadow: 0 0 10px black;
