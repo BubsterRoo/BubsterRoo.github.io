@@ -11,7 +11,7 @@ body{
 #board{
     border: 3px solid #242323;
     background-color: #242323;
-    aspect-ratio: 259/519;
+    aspect-ratio: 257/519;
     height: calc(100% - 6px);
     position: absolute;
     left: 50%;
@@ -29,7 +29,7 @@ body{
 #hold{
     border: 3px solid #242323;
     background-color: black;
-    height: calc(100% / 4.24);
+    height: calc(100% / 4.2);
     aspect-ratio: 182/150;
     left: 21%;
     top: 5%;
