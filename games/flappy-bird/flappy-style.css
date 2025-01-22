@@ -14,9 +14,5 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    background-image: url(images/Background.png);
-    background-size: auto calc(100% - 74px);
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
+    
 }
