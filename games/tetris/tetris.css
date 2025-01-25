@@ -20,7 +20,7 @@ body{
 #nextPiece{
     border: 3px solid #242323;
     background-color: black;
-    height: calc(100% / 1.65);
+    height: calc(100% / 1.45);
     aspect-ratio: 182/385;
     top: 5%;
     right: 21%;

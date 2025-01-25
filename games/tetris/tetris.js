@@ -64,49 +64,48 @@ const pieces = [
     {name: 'tPiece', image: tPiece, outline: tPieceOutline, binary: t},
     {name: 'oPiece', image: oPiece, outline: oPieceOutline, binary: o}
 ]
-
 const tetrominoes = {  
     i: [
-       [[0, 0, 0, 0], [1, 1, 1, 1]],
-       [[0, 0, 1], [0, 0, 1], [0, 0, 1], [0, 0, 1]],
-       [[0, 0, 0, 0], [0, 0, 0, 0], [1, 1, 1, 1]],
-       [[0, 1], [0, 1], [0, 1], [0, 1]]
+       [[0, 0, 0, 0], [1, 1, 1, 1], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 0, 1, 0], [0, 0, 1, 0], [0, 0, 1, 0], [0, 0, 1, 0]],
+       [[0, 0, 0, 0], [0, 0, 0, 0], [1, 1, 1, 1], [0, 0, 0, 0]],
+       [[0, 1, 0, 0], [0, 1, 0, 0], [0, 1, 0, 0], [0, 1, 0, 0]]
     ],
     l: [
-       [[0, 0, 2], [2, 2, 2]],
-       [[0, 2, 0], [0, 2, 0], [0, 2, 2]],
-       [[0, 0, 0, ], [2, 2, 2], [2, 0, 0]],
-       [[2, 2], [0, 2], [0, 2]]
+       [[0, 0, 2, 0], [2, 2, 2, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 2, 0, 0], [0, 2, 0, 0], [0, 2, 2, 0], [0, 0, 0, 0]],
+       [[0, 0, 0, 0], [2, 2, 2, 0], [2, 0, 0, 0], [0, 0, 0, 0]],
+       [[2, 2, 0, 0], [0, 2, 0, 0], [0, 2, 0, 0], [0, 0, 0, 0]]
     ],
     j: [
-       [[3, 0, 0], [3, 3, 3]],
-       [[0, 3, 3], [0, 3, 0], [0, 3, 0]],
-       [[0, 0, 0], [3, 3, 3], [0, 0, 3]],
-       [[0, 3], [0, 3], [3, 3]]
+       [[3, 0, 0, 0], [3, 3, 3, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 3, 3, 0], [0, 3, 0, 0], [0, 3, 0, 0], [0, 0, 0, 0]],
+       [[0, 0, 0, 0], [3, 3, 3, 0], [0, 0, 3, 0], [0, 0, 0, 0]],
+       [[0, 3, 0, 0], [0, 3, 0, 0], [3, 3, 0, 0], [0, 0, 0, 0]]
     ],
     z: [
-       [[4, 4, 0], [0, 4, 4]],
-       [[0, 0, 4], [0, 4, 4], [0, 4, 0]],
-       [[0, 0, 0], [4, 4, 0], [0, 4, 4]],
-       [[0, 4], [4, 4], [4, 0]]
+       [[4, 4, 0, 0], [0, 4, 4, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 0, 4, 0], [0, 4, 4, 0], [0, 4, 0, 0], [0, 0, 0, 0]],
+       [[0, 0, 0, 0], [4, 4, 0, 0], [0, 4, 4, 0], [0, 0, 0, 0]],
+       [[0, 4, 0, 0], [4, 4, 0, 0], [4, 0, 0, 0], [0, 0, 0, 0]]
     ],
     s: [
-       [[0, 5, 5], [5, 5, 0]],
-       [[0, 5, 0], [0, 5, 5], [0, 0, 5]],
-       [[0, 0, 0], [0, 5, 5], [5, 5, 0]],
-       [[5, 0], [5, 5], [0, 5]]
+       [[0, 5, 5, 0], [5, 5, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 5, 0, 0], [0, 5, 5, 0], [0, 0, 5, 0], [0, 0, 0, 0]],
+       [[0, 0, 0, 0], [0, 5, 5, 0], [5, 5, 0, 0], [0, 0, 0, 0]],
+       [[5, 0, 0, 0], [5, 5, 0, 0], [0, 5, 0, 0], [0, 0, 0, 0]]
     ],
     t: [
-       [[0, 6, 0], [6, 6, 6]],
-       [[0, 6, 0], [0, 6, 6], [0, 6, 0]],
-       [[0, 0, 0], [6, 6, 6], [0, 6, 0]],
-       [[0, 6], [6, 6], [0, 6]]
+       [[0, 6, 0, 0], [6, 6, 6, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 6, 0, 0], [0, 6, 6, 0], [0, 6, 0, 0], [0, 0, 0, 0]],
+       [[0, 0, 0, 0], [6, 6, 6, 0], [0, 6, 0, 0], [0, 0, 0, 0]],
+       [[0, 6, 0, 0], [6, 6, 0, 0], [0, 6, 0, 0], [0, 0, 0, 0]]
     ],
     o: [
-       [[7, 7], [7, 7]],
-       [[7, 7], [7, 7]],
-       [[7, 7], [7, 7]],
-       [[7, 7], [7, 7]]
+       [[0, 7, 7, 0], [0, 7, 7, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 7, 7, 0], [0, 7, 7, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 7, 7, 0], [0, 7, 7, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+       [[0, 7, 7, 0], [0, 7, 7, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
     ]
 };
 
@@ -131,6 +130,7 @@ scorectx.fillText(linesText, (score.width - lineTextWidth) / 2, 175);
 
 let boardArray = new Array(20).fill(0).map(() => new Array(10).fill(0));
 let holdArray = new Array(5).fill(0).map(() => new Array(6).fill(0));
+let nextPieceArray = new Array(14).fill(0).map(() => new Array(6).fill(0));
 
 let x = 3;
 let y = 0;
@@ -144,8 +144,6 @@ let scoreEarnedWidth = scorectx.measureText(scoreEarned).width;
 let lineScoredWidth = scorectx.measureText(lineScored).width;
 scorectx.fillText(scoreEarned, (score.width - scoreEarnedWidth) / 2, 85)
 scorectx.fillText(lineScored, (score.width - scoreEarnedWidth) / 2, 225)
-
-
 
 function getRandomPiece(){
     const randomIndex = Math.floor(Math.random() * 7);
@@ -190,9 +188,22 @@ function drawPieces(board, array){
     }
 }
 function drawNext(one, two, three){
-    nextPiecectx.drawImage(one.image, cellSize, cellSize, cellSize, cellSize);
-    nextPiecectx.drawImage(two.image, cellSize, cellSize * 2, cellSize, cellSize);
-    nextPiecectx.drawImage(three.image, cellSize, cellSize * 3, cellSize, cellSize);
+    drawPieces(nextPiecectx, nextPieceArray);
+
+    nextPiecectx.clearRect(0, 0, nextPiece.width, nextPiece.height);
+    nextPiecectx.fillText(nextText, (nextPiece.width - nextTextWidth) / 2, 35);
+
+    for(let i = 0; i < 6; i++){
+        for(let j = 0; j < 14; j++){
+            nextPieceArray[j][i] = 0;
+        }
+    }
+
+    drawTetromino(nextPieceArray, 2, 2, Object.keys(tetrominoes)[one.binary - 1], 0);
+    drawTetromino(nextPieceArray, 2, 6, Object.keys(tetrominoes)[two.binary - 1], 0);
+    drawTetromino(nextPieceArray, 2, 10, Object.keys(tetrominoes)[three.binary - 1], 0);
+    drawPieces(nextPiecectx, nextPieceArray);
+
 }
 function findBottom(x, y){
     for(let i = 0; i < tetrominoes[currentTetromino][currentRotation].length; i++){
@@ -207,11 +218,28 @@ function findBottom(x, y){
     return false;
 }
 function findBottomSpace(x, y){
-    let count = 0
-    while(y + 1 < boardArray.length && boardArray[y + 1][x] === 0){
-        y++;
-        count++
+    let count = Infinity;
+
+    for(let i = tetrominoes[currentTetromino][currentRotation].length - 1; i >= 0; i--){
+        for(let j = 0; j < tetrominoes[currentTetromino][currentRotation][i].length; j++){
+            if(tetrominoes[currentTetromino][currentRotation][i][j] !== 0){
+                let tempY = y;
+                let countTwo = 0;
+                if(y + i + 1 < boardArray.length && x + j >= 0 && x + j < boardArray[0].length && boardArray[y + i + 1][x + j] === 0){
+                    while(tempY + i + 1 < boardArray.length && boardArray[tempY + i + 1][x + j] === 0){
+                        tempY++;
+                        countTwo++;
+                    }
+                    count = Math.min(count, countTwo);
+                }
+            }
+        }
     }
+    if((currentTetromino !== 'i' && currentRotation !== 0) || (currentTetromino !== 'i' && currentRotation !== 2)){
+        count++;
+    }
+
+    console.log(count);
     return count;
 }
 function movePieceDown(){
@@ -256,7 +284,9 @@ function drawTetromino(array, x, y, piece, rotation){
     for(let i = 0; i < tetrominoes[piece][rotation].length; i++){
         for(let j = 0; j < tetrominoes[piece][rotation][i].length; j++){
             if(tetrominoes[piece][rotation][i][j] !== 0){
-                array[y+i][x+j] = tetrominoes[piece][rotation][i][j];
+                if(x + j >= 0 && x + j < array[0].length && y + i >= 0 && y + i < array.length){
+                    array[y+i][x+j] = tetrominoes[piece][rotation][i][j];
+                }
             }
         }
     }
@@ -265,7 +295,9 @@ function clearTetromino(array, x, y){
     for(let i = 0; i < tetrominoes[currentTetromino][currentRotation].length; i++){
         for(let j = 0; j < tetrominoes[currentTetromino][currentRotation][i].length; j++){
             if(tetrominoes[currentTetromino][currentRotation][i][j] !== 0){
-                array[y+i][x+j] = 0;
+                if(x + j >= 0 && x + j < array[0].length && y + i >= 0 && y + i < array.length){
+                    array[y+i][x+j] = 0;
+                }
             }
         }
     }
@@ -335,20 +367,35 @@ function getHeight(){
     }
     return pieceHeight;
 }
+function findLeft(){
+    let count = Infinity;
+
+    for(let i = 0; i < tetrominoes[currentTetromino][currentRotation].length; i++){
+        for(let j = 0; j < tetrominoes[currentTetromino][currentRotation][i].length; j++){
+            if(tetrominoes[currentTetromino][currentRotation][i][j] !== 0){
+                let tempX = x;
+                let countTwo = 0;
+                if(x + j - 1 >= 0 && boardArray[y + i][x + j - 1] === 0){
+                    while(tempX + j - 1 >= 0 && boardArray[y + i][tempX + j - 1] === 0){
+                        tempX--;
+                        countTwo++;
+                    }
+                    
+                }else{
+                    countTwo = 0;
+                }
+                console.log("count Two: " + countTwo);
+                count = Math.min(count, countTwo);
+            }
+        }
+    }
+
+    return count;
+}
 document.addEventListener('keydown', (e) => {
     if(e.key === 'ArrowLeft'){
         if(movement === true){
-            canMoveLeft = true;
-            for(let i = 0; i < tetrominoes[currentTetromino][currentRotation].length; i++){
-                for(let j = 0; j < tetrominoes[currentTetromino][currentRotation][i].length; j++){
-                    if(tetrominoes[currentTetromino][currentRotation][i][j] !== 0){
-                        if(x + j - 1 < 0 || boardArray[y + i][x + j - 1 === 0]){
-                            canMoveLeft = false
-                        }
-                    }
-                }
-            }
-            if(canMoveLeft === true){
+            if(x !== 0){
                 clearTetromino(boardArray, x, y);
                 x--;
                 drawTetromino(boardArray, x, y, currentTetromino, currentRotation);
@@ -440,11 +487,14 @@ background.onload = function(){
     nextPieceOne = getRandomPiece();
     nextPieceTwo = getRandomPiece();
     nextPieceThree = getRandomPiece();
-    generateNewPiece();
+    currentpiece = nextPieceOne.binary;
     currentTetromino = Object.keys(tetrominoes)[currentpiece - 1];
+    generateNewPiece();
     drawNext(nextPieceOne, nextPieceTwo, nextPieceThree);
     drawTetromino(boardArray, x, y, currentTetromino, currentRotation);
     drawBoard();
     drawPieces(boardctx, boardArray);
+
+    console.log(findLeft());
     intervalid = setInterval(movePieceDown, 1000);
 }
