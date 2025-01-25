@@ -99,7 +99,7 @@ function animate(){
     }
 
     if(xPipe < -pipeImage.width){
-        yPipe = Math.floor(Math.random() * canvas.height);
+        yPipe = yPipe = Math.floor(Math.random() * (canvas.height - 160 - 240 + 1) + 240);
         xPipe = canvas.width;
     }
 
