@@ -134,7 +134,7 @@ function floorCollision(){
 }
 document.addEventListener('keydown', (e) => {
     if(e.key === ' '){
-        if(floorCollision() === false){
+        if(death === false){
             yBird = yBird - 65;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(background, 0, 0, canvas.width, canvas.height - 75);
