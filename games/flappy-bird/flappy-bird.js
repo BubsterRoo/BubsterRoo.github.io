@@ -34,7 +34,7 @@ let yBird = canvas.height / 2;
 const xBird = (canvas.width / 2) - (55.5);
 let xPipe = canvas.width;
 let yPipe = Math.floor(Math.random() * (canvas.height - 160 - 240 + 1) + 240);
-
+let death = false;
 let xPosRect = (canvas.width / 2) - (55);
 let yPosRect = (canvas.height / 2) - (20);
 const rect = ctx.fillRect(xPosRect, yPosRect, 55, 40);
@@ -46,9 +46,18 @@ function drawFloor(){
     }
 }
 function hitbox(){
-    ctx.fillRect(xPipe, yPipe - 155, 85, 155);
+    hit = false;
+    if((xBird + 55 > xPipe && xBird + 55 < xPipe + 85) || (xBird > xPipe && xBird < xPipe + 85)){
+        hit = true;
+    }
+    if((xBird + 55 > xPipe && xBird + 55 < xPipe + 85) && (yBird - 20 > yPipe - 155 && yBird + 20 < yPipe)){
+        hit = false;
+    }
+    if((xBird > xPipe && xBird < xPipe + 85) && (yBird - 20 > yPipe - 155 && yBird + 20 < yPipe)){
+        hit = false;
+    }
+    return hit;
 }
-
 function drawScore() {
     ctx.font = '50px flappybirdnum';
     ctx.textAlign = 'center';
@@ -60,7 +69,6 @@ function drawScore() {
     ctx.strokeStyle = '#000000';
     ctx.strokeText(score, canvas.width / 2, 145);
 }
-
 function animate(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height - 75);
@@ -68,8 +76,6 @@ function animate(){
     xPipe -= 4;
 
     drawPipe();
-
-    hitbox();
 
     drawFloor();
 
@@ -100,8 +106,13 @@ function animate(){
     if(xBird + 55 == xPipe + 41){
         score++;
     }
-
-    if(floorCollision() === false){
+    if(hitbox() === true){
+        death = true;
+    }
+    else if(floorCollision() === true){
+        death = true;
+    }
+    if(death === false){
         requestAnimationFrame(animate);
     }
 }
