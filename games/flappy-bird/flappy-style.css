@@ -2,7 +2,12 @@
     font-family: "flappybirdnum";
     src: url("fonts/FlappyBird.TTF");
 }
-
+body{
+    background-image: url(https://wallpapers.com/images/high/flappy-bird-background-5kn0uk837k957ojt.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+}
 *{
     margin: 0;
     padding: 0;
