@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "en">
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+        <title>Anthony Braden</title>
+        <link rel = "icon" href = "images/Profile Picture.png">
+        <link rel = "stylesheet" href = "style.css">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <h1>Anthony Braden</h1>
+            <div class = "menu" onclick = "myFunction(this)">
+                <div class = "bar1"></div>
+                <div class = "bar2"></div>
+                <div class = "bar3"></div>
+            </div>
+            <!--Dropdown Menu-->
+            <div id="myDropdown" class="dropdown-content">
+                <p>Links</p>
+                <a href="https://youtube.com/@bubster_roo47" target="_blank">YouTube</a>
+                <a href="https://github.com/BubsterRoo" target="_blank">Github</a>
+                <a href="https://bubster-roo.itch.io" target="_blank">Itch.io</a>
+                <a href="https://www.linkedin.com/in/anthony-braden-53538033a/o" target="_blank">LinkedIn</a>
+                <p>Projects</p>
+                <a href="https://bubsterroo.github.io/" target="_blank">Portfolio</a>
+                <a href="https://bubsterroo.github.io/Troop718" target="_blank">Troop 718 Page</a>
+                <a href="https://bubsterroo.github.io/games" target="_blank">Game Page</a>
+            </div>
+        <script>
+            function myFunction(x){
+                x.classList.toggle("change");
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+            window.onclick = function(event){
+                var menu = document.getElementsByClassName("menu")[0];
+                var dropdowns = document.getElementById("myDropdown");
+                if(menu.classList.contains('change') && (event.target === menu || !dropdowns.contains(event.target) && !menu.contains(event.target))){
+                    myFunction(menu);
+                }
+            }
+        </script>
+        <div class = container>
+            <p>
+                My name is Anthony Braden, and I am highly interested in programming.
+                I learned Java, JavaScript, HTML, and Python, and I'm trying to learn C++.
+                In my final year of High School in Senior year, I am taking the Capstone class
+                of my IT Academy where I will be coding a game for the whole year. I will be posting more in
+                the future as I progress.
+            </p>
+            <p>
+                I have accomplished many different things in life.
+                One of the biggest things I have achieved is getting the Eagle Rank in Boy Scouts.
+                I have worked hard to get this and have learned a lot along the way.
+                By the time of getting Eagle Rank, I had aquired 55 Merit Badges,
+                which gave me 6 Eagle Palms.
+            </p>
+            <p>
+                I have played many roles in many different sports.
+                The sports I have played are, Baseball, Football, Flag Football, Swimming, and Basketball.
+                Basketball is the sport I have made most in life as I have played it for 6 years.
+                I have also done some other less competitive sports.
+                The sports that I have done are some golf and disk golf.
+            </p>
+            <p>
+                <div class = "certifications">
+                I have achieved many different certifications including:
+                    <p>Entrpreneurship and Small Business</p>
+                    <p>Computational Thinking</p>
+                    <p>Python</p>
+                    <p>Java</p>
+                    </div>
+            </p>
+            <!--
+            <p>
+                For any inquiries or feedback for anything I have done,
+                email me at my business email:⠀
+                <a href= "mailto:@gmail.com">@gmail.com</a>
+            </p>
+            -->
+            <p></p>
+        </div>
+        <div class = images>
+            <img src = images/Eagle.jpg alt = "Eagle Certificate" class = "eagle">
+            <img src = images/Trophies.jpg alt = "Trophies" class = "trophies">
+            <img src = images/Basketball.jpg alt = "Basketball" class = "basketball">
+        </div>
+    </body>
+</html>
